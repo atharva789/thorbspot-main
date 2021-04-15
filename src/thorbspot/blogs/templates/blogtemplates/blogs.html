@@ -1,22 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container-fluid bg-2 text-center">
+<div class="container-fluid bg-5 text-center">
 {% if objects|length == 0 %}
-    <h1>No Blogs yet…</h1>
+    <h1>No Blogs Here 😔</h1>
 {% else %} 
-    <h1>Blog Posts </h1> 
+    <h1>Blog Posts</h1>
+    <div class="centered">
     {% for obj in objects %}
-        <div class="main center">
-            <div class="box xenter">
-                <li class="li">
-                <ul>
-                    <h1>{{ obj.title }}</h1>
-                    <p>{{ obj.blog }}</p>
-                </ul>
-                </li>
-                </div>
+        {% url 'blog' obj.id as obj.id %}
+        <div class="centered-3">
+        <li class="li">
+        <div class="box bg-1">
+
+        <a href="{{ obj.id }}" style="text-decoration: none;">
+        
+        <div class="box bg-2 li">
+        
+        <div class="centered-3">
+        <h1>{{ obj.title }}</h1>
+        <p>{{ obj.description }}</p> 
+        </div>
+
+        <div class="centered-3">
+            <p>Click To See Full Bog</p>
+        </div>
+        </div>
+        </a>
+        </div>
+        </li>
         </div>
     {% endfor %}
+    </div>
+
 {% endif %}
 </div>
 {% endblock %}

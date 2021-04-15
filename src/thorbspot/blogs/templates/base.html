@@ -33,6 +33,12 @@
     background-color: #2f2f2f; /* Black Gray */
     color: #fff;
   }
+
+  .bg-5{
+    background-color: #151515;
+    color: #fff;
+  }
+
   .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -51,10 +57,36 @@
     color: #1abc9c !important;
   }
 
+  a:link{
+    color: #1abc9c;
+  }
+
+  a:hover{
+    color: #1abc9c;
+  }
+
+  a:visited{
+    color: #1abc9c;
+  }
+
   *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  .centered-two{
+    display: inline-block;
+    padding: 10px;
+  }
+
+  .centered{
+    padding: 40px;
+  }
+
+  .centered-3{
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   .center{
@@ -67,18 +99,36 @@
     height: 100vh;
   }  
 
+  .main-2{
+    height: 50vh;
+  }
+
+  .main-3{
+    height: 30vh;
+  }
+
+  .main-4{
+    height: 10vh;
+  }
+
+  .main-5{
+    height: auto;
+  }
+
+  .col{
+    background: #151515; 
+  }
+
   .box{
-    width: 250px;
-    height: 50px;
+    width: 720;
+    height: 960;
     border-radius: 20px;
-    box-shadow: #2f2f2f;
+    box-shadow: #000000;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.363);
   }
 
   .li{
-    width: 350px;
-    padding: 15px;
-    color: #fff;
-    background: #151515;
+
     list-style: none;
     cursor: pointer;
     transition: all .4s;
@@ -88,28 +138,24 @@
 
   .li:hover{
     transform: translate(20px);
+    color: #1abc9c;
   }
   
   .li::before, .li::after{
     content: "";
     position: absolute;
-    background: #151515;
     transition: all .4s;
   }
 
   .li::before{
-    width: 20px;
-    height: 100%;
     top: 0; left: -30px;
   }
 
   .li::after{
-    width: 100%;
-    height: 2px;
     bottom: 0; left: 0;
   }
 
-  .li::hover::before, .li.li::hover::after{
+  .li::hover::before, .li::hover::after{
     background: #00ffff;box-shadow: 0 0 10px aqua;
   }
 
@@ -140,7 +186,7 @@
 {% endblock %}
 
 <!-- Footer -->
-<footer class="container-fluid bg-4 text-center">
+<footer class="container-fluid bg-4 text-center main-5">
   <p>Built from scratch by Me, Thorba.</p> 
 </footer>
 

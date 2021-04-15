@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container-fluid bg-2 text-center">
-  <form action="." method="POST"> 
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save"/>
-  </form>
-</div>
+{% if request.user.username == 'Thorba' %}
+  <div class="container-fluid bg-5 text-center">
+    <form action="." method="POST"> 
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Save"/>
+    </form>
+  </div>
+{% else %}
+  <div class="container-fluid bg-5 text-center">
+    <h1 class="box li">Permission Denied</h1>
+  </div>
+{% endif %}
 {% endblock %}
