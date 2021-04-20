@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="container-fluid bg-5 text-center">
-{% if objects|length == 0 %}
+
+    {% if objects|length == 0 %}
+
     <h1>No Blogs Here 😔</h1>
+
 {% else %} 
+
     <h1>Blog Posts</h1>
     <div class="centered">
+
     {% for obj in objects %}
         {% url 'blog' obj.id as obj.id %}
         <div class="centered-3">
