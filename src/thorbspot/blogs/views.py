@@ -25,13 +25,13 @@ def blogpost_view(request):
 
 def dynamic_blog_url(request, blog_id):
     nblog = get_object_or_404(Blog, id=blog_id)
-    objs = list(Blog.objects.all())
+    queryset = Blog.objects.all()
 
     if request.method == "POST":
         nblog.delete()
         return redirect('../')
     nblog_context = {
         'blog': nblog,
-        'objects': objs
+        'objects': queryset
     }
     return render(request, 'blogview.html', nblog_context)

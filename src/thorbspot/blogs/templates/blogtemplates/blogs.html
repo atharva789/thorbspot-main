@@ -13,12 +13,11 @@
     <div class="centered">
 
     {% for obj in objects %}
-        {% url 'blog' obj.id as obj.id %}
         <div class="centered-3">
         <li class="li">
         <div class="box bg-1">
 
-        <a href="{{ obj.id }}" style="text-decoration: none;">
+        <a href="{{ obj.get_absolute_url }}" style="text-decoration: none;">
         
         <div class="box bg-2 li">
         
