@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if request.user.username == 'Thorba' %}
+    <form action="." method="POST">
+      {% csrf_token %}
+      <a href="../">
+      <button class="button-1">
+          {{ object.title }}
+          <input type="submit" value="Delete"/>
+        </button>
+      </a>
+    </form>
+{% else %}
+    <h1>Permission Denied</h1>
+{% endif %}
+
+{% endblock %}
